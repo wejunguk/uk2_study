@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* 
+		  alert(); // 작성한 내용을 출력함
+		  prompt(); // 입력칸이 나옴
+		 */
+
+		var id = prompt('아이디를 입력해주세요');
+
+		if (id == 'uk20915') {
+			alert('아이디가 일치합니다.');
+		} else {
+			alert('아이디가 일치하지 않습니다.');
+		}
+
+		// 아이디가 맞을 경우 비밀번호 입력 창 나옴
+		// 아이디가 틀리면 아이디가 일치하지 않습니다. 출력
+		// 비밀번호가 맞으면 환영! @@님 반갑습니다. 출력
+		// 비밀번호가 틀리면 비밀번호가 일치하지 않습니다. 출력
+
+		// 1)
+		// 아이디 : uk20915
+		// 비밀번호 123456
+
+		var id = prompt('아이디를 입력해주세요');
+
+		if (id == 'uk20915') {
+			var password = prompt('비밀번호를 입력해주세요')
+			if (password == '123456') {
+				alert('로그인이 완료되었습니다.' + id + '님 환영합니다.');
+			} else {
+				alert('비밀번호가 일치하지 않습니다.');
+			}
+		} else {
+			alert('아이디가 일치하지 않습니다.');
+		}
+
+		// 2)
+		// 아이디 : wjddnr3170
+		// 비밀번호 11
+		
+		var id = prompt('아이디를 입력해주세요');
+		if (id == 'wjddnr3170') {
+			var pwd = prompt('비밀번호를 입력해주세요.');
+			if (pwd == '11') {
+				alert('성공!' + id + '님 반갑습니다');
+			} else {
+				alert('비밀번호가 틀렸습니다.');
+			}
+		} else {
+			alert('아이디를 잘못 입력하였습니다.');
+		}
+
+		// 3)
+    // 메일 : test01@naver.com
+    // 비밀번호 11
+	    
+	    
+		var email = prompt("이메일을 입력해주세요.");
+		if (email == 'test@naver.com') {
+			var pwd = prompt("비밀번호를 입력해주세요.");
+			if (pwd == '1234') {
+				alert("성공!" + email + "님 반갑습니다!");
+			} else {
+				alert("비밀번호가 다릅니다.");
+			}
+		} else {
+			alert("이메일이 다릅니다.");
+		}
+	</script>
+</body>
+</html>

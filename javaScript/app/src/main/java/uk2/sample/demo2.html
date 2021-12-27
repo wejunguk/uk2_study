@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <script>
+  /* 
+    비교  
+    연산자?
+    		
+    == : equal operator 좌항과 우항을 비교해서 서로 값이 같다면 true
+    === : strict equal operator, 좌항과 우항이 '정확'하게 같을 때 true
+    
+    강력하게 ===를 사용해라!
+    
+    != : 같지 않다.
+    !== : 완전히 같지 않다. 
+  */
+	alert(a == 'a'); // true, 데이터값이 같기 때문에
+	alert(a === 'a'); // false, 데이터값은 같지만 데이터타입은 같지 않기 때문에
+	
+	alert(null == undefined);       //true
+	alert(null === undefined);      //false
+	alert(true == 1);               //true
+	alert(true === 1);              //false
+	alert(true == '1');             //true
+	alert(true === '1');            //false
+	 
+	alert(0 === -0);                //true
+	alert(NaN === NaN);             //fals
+	
+	/* 
+	null 과 undefined를 데이터 타입이라고 생각하면 이해 쉬움 
+	*/
+	
+	alert(1!=2);            //true
+	alert(1!=1);            //false
+	alert("one"!="two");    //true
+	alert("one"!="one");    //false
+	
+	alert(10>20);   //false
+	alert(10>1);    //true
+	alert(10>10);   //false
+	
+	alert(10>20);   //false
+	alert(10>1);    //true
+	alert(10>10);   //false
+	
+	alert(10>=20);      //false
+	alert(10>=1);       //true
+	alert(10>=10);      //true
+	
+  </script>
+</body>
+</html>

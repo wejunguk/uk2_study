@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		// id 값으로 a, b, c 중의 하나를 사용
+		// 비밀번호는 111111을 입력
+		// wrong를 출력
+		
+		var id = prompt('아이디를 입력해주세요.');
+		var pwd = prompt('비밀번호를 입력해주세요.');
+		
+		if ((id == 'a' || id == 'b' || id == 'c') && pwd == '111111') {
+			alert('인증했습니다.');
+		} else {
+			alert('인증에 실패했습니다.');
+		}
+
+	</script>
+</body>
+</html>

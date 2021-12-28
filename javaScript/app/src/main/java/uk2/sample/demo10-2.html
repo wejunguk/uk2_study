@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<ul>
+		<script>
+			var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+			for(var name in grades) {
+			    document.write("<li>key : "+name+" value : "+grades[name]+"</li>");
+			}
+			
+			/*  */
+			var grades = { // 객체 안에 여러개 키 선언 가능
+					'list' : {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+					'show' : function() {
+						alert("Hello world!");
+					}
+			}
+					
+				alert(grades['list']['egoing']); // 10 출력
+				alert (grades['show']()); // Hello world! 출력
+				
+				
+				/*  */
+				//this -> 정혀져 있는 변수
+			var grades = { // 객체 안에 여러개 키 선언 가능
+        'list' : {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+        'show' : function() {
+          alert(this); // 함수가 속해있는 객체를 가르키는 변수 = grades
+           console.log(this.list); // grades가 가지고 있는 list 값이 가르키는 객체
+          // {'egoing': 10, 'k8805': 6, 'sorialgi': 80} 가르킴
+        }
+      }
+				alert (grades['show']());
+				
+			/*  */
+      var grades = {
+        'list' : {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+        'show' : function() {
+        	 for (name in this.list) {
+        		  console.log(name, this.list[name]);
+        	 }
+        }
+      }
+        grades.show();
+			
+		</script>
+	</ul>
+</body>
+</html>

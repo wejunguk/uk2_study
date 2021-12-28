@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* 
+		
+		[]
+		: 입력. 
+		
+		익명함수란?
+		: 제일 밑 하단 참고
+			
+		 */
+
+		/*  */
+		function get_argument(arg) {
+			return arg + 1;
+		}
+
+		alert(get_argument(1)); // 1출력
+		alert(get_argument(2)); // 2 출력
+
+		// alert에 선언된 get_argument(1)의 1 값이
+		// 함수 get_argument(arg) arg에 들어감 1 => 인자 = 아규먼트 = 값
+		// return 1 + 1 해서 2가 리턴됨
+		// get_argument(1) 부분이 2로 바뀌고, alert(2);로 인해 2가 출력됨
+		// 함수 내에서 arg = 1 이라는 변수가 선언된다 => 매개변수 = 파라미터 = 값을 받는 변수
+
+		/*  */
+		function get_arguments(arg1, arg2) {
+			return arg1 + arg2
+		}
+
+		alert(get_arguments(10, 20)); // 30 출력
+		alert(get_arguments(20, 30)); // 50 출력
+
+		/*  */
+		var numbering = function() {
+			i = 0;
+			while (i < 10) {
+				document.write(i);
+				i += 1;
+			}
+		}
+		numbering(); // 와
+
+		function numbering() {
+			i = 0;
+			while (i < 10) {
+				document.write(i);
+				i += 1;
+			}
+		}
+		numbering(); // 같다
+		
+		/*  */
+		(function() {
+      i = 0;
+      while (i < 10) {
+        document.write(i);
+        i += 1;
+      }
+		}) (); // 익명함수. 이름이 없고 바로 실행되는 함수
+	</script>
+</body>
+</html>

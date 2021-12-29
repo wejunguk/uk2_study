@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* 
+		
+		  함수 - 유효범위(Scope)
+		  : 변수의 수명
+		              
+		 */
+		// 지역변수(local) : local
+		// 전역변수(global) : global
+		var vscope = 'global';
+		function fscope() {
+			var vscope = 'local'
+			alert(vscope);
+		}
+		fscope(); //함수 fscope()가 만들어짐 그 안에 있는 local 출력
+		  
+		// 함수 안에 var을 선언하고 변수를 만들면 지역변수가 만들어진다
+		var vscope = 'global';
+		function fscope() {
+			var vscope = 'local'
+		}
+		fscope();
+		alert(vscope); // global 출력
+		  
+		var vscope = 'global';
+		function fscope() {
+			vscope = 'local'
+		}
+		fscope(); // var이 없는 변수를 실행하면 전역변수가 생성된다.
+		          // global -> local로 수정됌
+		alert(vscope); // local 출력
+		
+	</script>
+</body>
+</html>

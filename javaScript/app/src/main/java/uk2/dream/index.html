@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <script src='main.js'></script> // js파일이 무거우면 사용자가 보는 페이지화면에 로딩이 오래 걸린다.
+    <script asyn src='main.js'></script> // 브라우저가 html다운받아서 parsing하다가
+    <script defer src='main.js'></script>
+</head>
+<body>
+    <div></div>
+    // 브라우저가 html를 다 parsing하고 난 후 스크립트를 만나서 스크립트를 실행한다.
+    // 화면 컨텐츠를 빨리 보여줄 수 있다.
+    <script src='main.js'></script> 
+</body>
+</html>

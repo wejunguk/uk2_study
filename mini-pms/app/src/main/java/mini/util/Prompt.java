@@ -1,4 +1,4 @@
-package mini.pms.util;
+package mini.util;
 
 import java.sql.Date;
 import java.util.Scanner;

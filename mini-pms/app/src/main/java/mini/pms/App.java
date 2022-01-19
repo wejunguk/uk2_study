@@ -1,5 +1,14 @@
 package mini.pms;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import mini.menu.Menu;
+import mini.menu.MenuGroup;
+import mini.pms.domain.Board;
+import mini.pms.domain.Member;
+import mini.pms.domain.Project;
+import mini.pms.domain.Task;
 import mini.pms.handler.BoardHandler;
 import mini.pms.handler.MemberHandler;
 import mini.pms.handler.ProjectHandler;
@@ -7,88 +16,136 @@ import mini.pms.handler.TaskHandler;
 import mini.util.Prompt;
 
 public class App {
+  List<Board> boardList = new ArrayList<>();
+  List<Member> memberList = new LinkedList<>();
+  List<Project> projectList = new ArrayList<>();
+  List<Task> taskList = new LinkedList<>();
+
+  BoardHandler boardHandler = new BoardHandler(boardList);
+  MemberHandler memberHandler = new MemberHandler(memberList);
+  ProjectHandler projectHandler = new ProjectHandler(projectList, memberHandler);
+  TaskHandler taskHandler = new TaskHandler(taskList, memberHandler);
 
   public static void main(String[] args) {
+    App app = new App(); 
+    app.service();
+  }
 
-    BoardHandler boardHandler = new BoardHandler();
-    MemberHandler memberHandler = new MemberHandler();
-    ProjectHandler projectHandler = new ProjectHandler();
-    TaskHandler taskHandler = new TaskHandler();
-
-    while (true) {
-      String input = Prompt.inputString("명령> ");
-
-      if (input.equals("exit") || input.equals("quit")) {
-        System.out.println("안녕!");
-        break;
-      } else if (input.equals("/member/add")) {
-        memberHandler.add();
-
-      } else if (input.equals("/member/list")) {
-        memberHandler.list();
-
-      } else if (input.equals("/member/detail")) {
-        memberHandler.detail();
-
-      } else if (input.equals("/member/update")) {
-        memberHandler.update();
-
-      } else if (input.equals("/member/delete")) {
-        memberHandler.delete();
-
-      }  else if (input.equals("/project/add")) {
-        projectHandler.add(memberHandler);
-
-      }  else if (input.equals("/project/list")) {
-        projectHandler.list();
-
-      }  else if (input.equals("/project/detail")) {
-        projectHandler.detail();
-
-      }  else if (input.equals("/project/update")) {
-        projectHandler.update(memberHandler);
-
-      }  else if (input.equals("/project/delete")) {
-        projectHandler.delete();
-
-      }  else if (input.equals("/task/add")) {
-        taskHandler.add(memberHandler);
-
-      }  else if (input.equals("/task/list")) {
-        taskHandler.list();
-
-      }  else if (input.equals("/task/detail")) {
-        taskHandler.detail();
-
-      }  else if (input.equals("/task/update")) {
-        taskHandler.update(memberHandler);
-
-      }  else if (input.equals("/task/delete")) {
-        taskHandler.delete();
-
-      }  else if (input.equals("/board/add")) {
-        boardHandler.add();
-
-      }  else if (input.equals("/board/list")) {
-        boardHandler.list();
-
-      }  else if (input.equals("/board/detail")) {
-        boardHandler.detail();
-
-      }  else if (input.equals("/board/update")) {
-        boardHandler.update();
-
-      }  else if (input.equals("/board/delete")) {
-        boardHandler.delete();
-
-      } else {
-        System.out.println("실행할 수 없는 명령입니다.");
-      }
-      System.out.println();
-    }
-
-    // Prompt 가 소유하고 관리하고 있는 자원을 닫으라고 명령한다. 
+  void service() {
+    createMenu().execute();
     Prompt.close();
+  }
+
+  Menu createMenu() {
+    MenuGroup mainMenuGroup = new MenuGroup("메인");
+    mainMenuGroup.setPrevMenuTitle("종료");
+
+    MenuGroup boardMenu = new MenuGroup("게시판");
+    mainMenuGroup.add(boardMenu);
+
+    boardMenu.add(new Menu("등록") {
+      public void execute() {
+        boardHandler.add(); 
+      }});
+    boardMenu.add(new Menu("목록") {
+      public void execute() {
+        boardHandler.list(); 
+      }});
+    boardMenu.add(new Menu("상세보기") {
+      public void execute() {
+        boardHandler.detail(); 
+      }});
+    boardMenu.add(new Menu("변경") {
+      public void execute() {
+        boardHandler.update(); 
+      }});
+    boardMenu.add(new Menu("삭제") {
+      public void execute() {
+        boardHandler.delete(); 
+      }});
+
+    MenuGroup memberMenu = new MenuGroup("회원");
+    mainMenuGroup.add(memberMenu);
+
+    memberMenu.add(new Menu("등록") {
+      public void execute() {
+        memberHandler.add(); 
+      }});
+    memberMenu.add(new Menu("목록") {
+      public void execute() {
+        memberHandler.list(); 
+      }});
+    memberMenu.add(new Menu("상세보기") {
+      public void execute() {
+        memberHandler.detail(); 
+      }});
+    memberMenu.add(new Menu("변경") {
+      public void execute() {
+        memberHandler.update(); 
+      }});
+    memberMenu.add(new Menu("삭제") {
+      public void execute() {
+        memberHandler.delete(); 
+      }});
+
+    MenuGroup projectMenu = new MenuGroup("프로젝트");
+    mainMenuGroup.add(projectMenu);
+
+    projectMenu.add(new Menu("등록") {
+      public void execute() {
+        projectHandler.add(); 
+      }});
+    projectMenu.add(new Menu("목록") {
+      public void execute() {
+        projectHandler.list(); 
+      }});
+    projectMenu.add(new Menu("상세보기") {
+      public void execute() {
+        projectHandler.detail(); 
+      }});
+    projectMenu.add(new Menu("변경") {
+      public void execute() {
+        projectHandler.update(); 
+      }});
+    projectMenu.add(new Menu("삭제") {
+      public void execute() {
+        projectHandler.delete(); 
+      }});
+
+    MenuGroup taskMenu = new MenuGroup("작업");
+    mainMenuGroup.add(taskMenu);
+
+    taskMenu.add(new Menu("등록") {
+      public void execute() {
+        taskHandler.add(); 
+      }});
+    taskMenu.add(new Menu("목록") {
+      public void execute() {
+        taskHandler.list(); 
+      }});
+    taskMenu.add(new Menu("상세보기") {
+      public void execute() {
+        taskHandler.detail(); 
+      }});
+    taskMenu.add(new Menu("변경") {
+      public void execute() {
+        taskHandler.update(); 
+      }});
+    taskMenu.add(new Menu("삭제") {
+      public void execute() {
+        taskHandler.delete(); 
+      }});
+
+    MenuGroup mg1 = new MenuGroup("관리1");
+    mainMenuGroup.add(mg1);
+
+    MenuGroup mg2 = new MenuGroup("관리2");
+    mg1.add(mg2);
+
+    MenuGroup mg3 = new MenuGroup("관리3");
+    mg2.add(mg3);
+
+    return mainMenuGroup;
   }
 }
 

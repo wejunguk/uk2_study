@@ -2,15 +2,25 @@ package mini.pms.domain;
 
 import java.sql.Date;
 
-// 한 개의 작업 정보를 저장할 변수를 구성한다.
-// => 작업 정보를 저장할 새 데이터 타입을 정의한다.
 public class Task {
   private int no;
   private String content;
   private Date deadline;
-  private String owner;
-  private int status;
+  private Member owner;
+  private TaskStatus status;
+  private int projectNo;
 
+  @Override
+  public String toString() {
+    return "Task [no=" + no + ", content=" + content + ", deadline=" + deadline + ", owner=" + owner
+        + ", status=" + status + ", projectNo=" + projectNo + "]";
+  }
+  public int getProjectNo() {
+    return projectNo;
+  }
+  public void setProjectNo(int projectNo) {
+    this.projectNo = projectNo;
+  }
   public int getNo() {
     return no;
   }
@@ -29,16 +39,16 @@ public class Task {
   public void setDeadline(Date deadline) {
     this.deadline = deadline;
   }
-  public String getOwner() {
+  public Member getOwner() {
     return owner;
   }
-  public void setOwner(String owner) {
+  public void setOwner(Member owner) {
     this.owner = owner;
   }
-  public int getStatus() {
+  public TaskStatus getStatus() {
     return status;
   }
-  public void setStatus(int status) {
+  public void setStatus(TaskStatus status) {
     this.status = status;
   }
 }

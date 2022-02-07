@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+header {
+  height: 100px;
+}
+header ul li a {
+	text-align:center;
+}
+
+header ul .header-li {
+	text-align:center;
+}
+
+footer {
+  border: 1px solid blue;
+  clear:both;
+}
+
+aside {
+  border: 1px solid green;
+  float:left;
+  width:90px;
+  min-height:300px;
+}
+
+#content {
+  xborder: 1px dashed yellow;
+  margin-left: 100px; 
+}

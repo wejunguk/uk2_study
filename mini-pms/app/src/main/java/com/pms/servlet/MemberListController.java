@@ -3,7 +3,6 @@ package com.pms.servlet;
 import java.io.IOException;
 import java.util.Collection;
 import javax.servlet.GenericServlet;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -40,15 +39,9 @@ public class MemberListController extends GenericServlet {
       request.setAttribute("pageTitle", "회원목록");
       request.setAttribute("contentUrl", "/member/MemberList.jsp");
 
-      request.getRequestDispatcher("/template1.jsp").forward(request, response);
-
     } catch (Exception e) {
-      // 오류를 출력할 때 사용할 수 있도록 예외 객체를 저장소에 보관한다.
       request.setAttribute("error", e);
 
-      // 오류가 발생하면, 오류 내용을 출력할 뷰를 호출한다.
-      RequestDispatcher 요청배달자 = request.getRequestDispatcher("/Error.jsp");
-      요청배달자.forward(request, response);
     }
   }
 }

@@ -8,41 +8,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
-import com.pms.dao.MemberDao;
+import com.pms.dao.BoardDao;
+import com.pms.domain.Board;
 import com.pms.domain.Member;
 
-@WebServlet("/member/delete")
-public class MemberDeleteController extends HttpServlet {
+@WebServlet("/board/add")
+public class BoardAddController extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   SqlSession sqlSession;
-  MemberDao memberDao;
+  BoardDao boardDao;
 
   @Override
   public void init() {
     ServletContext 웹애플리케이션공용저장소 = getServletContext();
     sqlSession = (SqlSession) 웹애플리케이션공용저장소.getAttribute("sqlSession");
-    memberDao = (MemberDao) 웹애플리케이션공용저장소.getAttribute("memberDao");
+    boardDao = (BoardDao) 웹애플리케이션공용저장소.getAttribute("boardDao");
   }
 
   @Override
-  protected void service(HttpServletRequest request, HttpServletResponse response)
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-
     try {
-      int no = Integer.parseInt(request.getParameter("no"));
-      Member member = memberDao.findByNo(no);
-      if (member == null) {
-        throw new Exception("해당 번호의 회원이 없습니다.");
-      }
+      Board board = new Board();
 
-      memberDao.delete(no);
+      board.setTitle(request.getParameter("title"));
+      board.setContent(request.getParameter("content"));
+      board.setWriter((Member) request.getSession().getAttribute("loginUser"));
+
+      boardDao.insert(board);
       sqlSession.commit();
 
-      request.setAttribute("contentUrl", "redirect:list");
+      response.sendRedirect("list");
 
     } catch (Exception e) {
       request.setAttribute("error", e);
+      request.getRequestDispatcher("/Error.jsp").forward(request, response);
     }
   }
 }

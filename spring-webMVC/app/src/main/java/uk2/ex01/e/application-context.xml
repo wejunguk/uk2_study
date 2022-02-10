@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 객체 생성 -->
+  <!--
+    스프링 IoC컨테이너야
+    class경로로 따라 저 패키지에 가면 Car클래스가 있는데
+    Car클래스 객체를 만들어 주렴
+    그리고 저장할때 c1 이름으로 저장해줘    
+   -->
+  <bean id="c1" class="uk2.ex01.Car"/>
+  
+</beans>

@@ -11,6 +11,7 @@ import org.springframework.context.annotation.FilterType;
 // 사용법1:
 // => 한 개의 패키지를 지정하기
 // @ComponentScan(basePackages = {"uk2.ex11.p1"})
+
 // => 배열 항목이 한 개일 경우 중괄호({}) 생략 가능
 // @ComponentScan(basePackages = "uk2.ex11.p1")
 

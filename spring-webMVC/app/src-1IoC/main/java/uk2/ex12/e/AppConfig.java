@@ -47,6 +47,7 @@ public class AppConfig {
       ) throws Exception {
     SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     sqlSessionFactoryBean.setDataSource(dataSource);
+    // 패키지에 있는 모든 도메인을 가지고와서 별명을 부여한다.
     // sqlSessionFactoryBean.setTypeAliasesPackage("uk2.ex12");
     sqlSessionFactoryBean.setTypeAliases(Board.class);
     sqlSessionFactoryBean.setMapperLocations(

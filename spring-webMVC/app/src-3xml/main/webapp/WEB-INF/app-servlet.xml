@@ -8,11 +8,7 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
     
-    <!--
-    에노테이션 붙은거 다 찾아
-    bitcamp 패키지 안에 @붙은거 다 찾아서 객체 생성해라
-     -->
-    <context:component-scan base-package="bitcamp" />
+    <context:component-scan base-package="bitcamp.web.app" />
     
 </beans>
 

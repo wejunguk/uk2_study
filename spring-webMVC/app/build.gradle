@@ -60,7 +60,10 @@ dependencies {
   implementation 'org.mybatis:mybatis:3.5.7'
   
   // Google JSON 라이브러리
-  implementation 'com.google.code.gson:gson:2.8.8'
+  implementation 'com.google.code.gson:gson:2.8.9'
+  
+  // fasterxml의 JSON 라이브러리
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
   
   // Thumbnailator 썸네일 생성 라이브러리
   implementation 'net.coobird:thumbnailator:0.4.14'

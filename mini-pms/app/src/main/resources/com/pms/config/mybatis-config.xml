@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-  <properties resource="com/pms/conf/jdbc.properties"></properties>
+  <properties resource="com/pms/config/jdbc.properties"></properties>
 
   <typeAliases>
     <package name="com.pms.domain"/>

@@ -1,28 +1,29 @@
 @charset "UTF-8";
 
+.container {
+    xborder: 1px solid red;
+    width: 800px;
+}
+ 
 header {
-  height: 100px;
-}
-header ul li a {
-	text-align:center;
-}
-
-header ul .header-li {
-	text-align:center;
+	xborder: 1px solid red;
+	xheight: 80px;
 }
 
 footer {
-  border: 1px solid blue;
-  clear:both;
+	xborder: 1px solid blue;
+	clear: left;
 }
 
 aside {
-  border: 1px solid green;
-  float:left;
-  width:120px;
-  min-height:300px;
+	xborder: 1px solid green;
+	float: left;
+	width: 120px;
+	min-height: 300px; 
 }
 
 #content {
-  margin-left: 150px; 
+	xborder: 1px dashed yellow;
+	margin-left: 130px; 
 }
+

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="${contextRoot}/node_modules/sweetalert2/dist/sweetalert2.css">
   <link rel="stylesheet" href="${contextRoot}/css/common.css">
   
-  <script src="${contextRoot}/node_modules/@popperjs/core/dist/umd/popper.js"></script>
+  <script src="${contextPath}/node_modules/popperjs/dist/umd/popper.js"></script>
   <script src="${contextRoot}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="${contextRoot}/node_modules/sweetalert2/dist/sweetalert2.js"></script>
 </head>

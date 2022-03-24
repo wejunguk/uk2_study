@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\junguk we\\git\\uk2_study\\nodejs\\logs\\.9af1208a3bb8dc60c1cfe66e4e22a9a7d8c38728-audit.json",
+    "files": [
+        {
+            "date": 1648120091274,
+            "name": "C:\\Users\\junguk we\\git\\uk2_study\\nodejs\\logs\\2022-03-24.error.log",
+            "hash": "1958add7cf641da9a044aee5d742a03f"
+        }
+    ],
+    "hashType": "md5"
+}

@@ -13,7 +13,7 @@ public class UserDAO {
 
   public UserDAO() {
     try {
-      String dbURL = "jdbc:mysql://localhost:3306/BBS";
+      String dbURL = "jdbc:mysql://localhost:3306/BBS?useUnicode=true&characterEncoding=UTF-8";
       String dbID = "root";
       String dbPassword = "1111";
       Class.forName("com.mysql.cj.jdbc.Driver");
@@ -42,4 +42,26 @@ public class UserDAO {
     }
     return -2; // DB오류
   }
+
+  public int join(User user) {
+
+    String SQL = "INSERT INTO USER VALUES (?,?,?,?,?)";
+
+    try {
+      pstmt = conn.prepareStatement(SQL);
+
+      pstmt.setString(1, user.getId());
+      pstmt.setString(2, user.getPassword());
+      pstmt.setString(3, user.getName());
+      pstmt.setString(4, user.getGender());
+      pstmt.setString(5, user.getEmail());
+
+      return pstmt.executeUpdate();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return -1; // DB 오류
+  }
+
 }

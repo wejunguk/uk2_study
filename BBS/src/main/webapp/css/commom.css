@@ -1,0 +1,34 @@
+input[type=radio] {
+  display: none;
+}
+
+caption, hr, legend {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+button, input, select, textarea {
+  margin: 0;
+    padding: 0;
+    border: 1px solid #b7c2c3;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+a, a:hover {
+  color:#000000;
+  text-decoration:none;
+}
+
+.btn-outline-secondary {
+	border: 1px solid #ced4da;
+}
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+

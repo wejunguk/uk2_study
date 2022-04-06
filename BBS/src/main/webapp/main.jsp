@@ -67,6 +67,42 @@ if(session.getAttribute("id") != null) {
         
       </div>
     </nav>
+    <!--  
+    <div>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>메인페이지</h1>
+          <p>소개글 쓰기</p>
+          <a href="#" class="btn btn-primary" role="button">자세히 알아보기</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <h4 class="title-section happy-con">게시판 미리보기</h4>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+          <c:forEach items="${list}"
+            var="BbsDAO">
+            <div class="card-testimonial">
+              <div class="content">${volunteerShortReviewDTO.content}</div>
+              <div class="author">
+                <div class="avatar">
+                  <img src="${contextPath}/assets/img/level.png" alt="">
+                </div>
+                <div class="d-inline-block ml-2">
+                  <div class="author-name">${volunteerShortReviewDTO.owner.id}</div>
+                  <div class="author-info">${volunteerShortReviewDTO.registeredDate}</div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+    </div>
+    -->
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.js"></script>

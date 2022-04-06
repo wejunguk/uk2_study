@@ -3,10 +3,9 @@
    <%
    request.setCharacterEncoding("UTF-8");
    %>
-<%@ page import="bbs.BbsDAO" %>
-<%@ page import="bbs.BbsDTO" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.io.PrintWriter" %>
+<%@ page import="bbs.BbsDTO" %>
+<%@ page import="bbs.BbsDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +18,22 @@
 <body>
 	<%
 	String id = null;
-		if (session.getAttribute("id") != null) {
-		  id = (String) session.getAttribute("id");
-		}
-		int pageNumber = 1; // 기본 1페이지
-		if (request.getParameter("pageNumber") != null) {
-		  pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-		}
+			if(session.getAttribute("id") != null) {
+			  id = (String) session.getAttribute("id");
+			}
+			
+			int bbsID = 0;
+			if (request.getParameter("bbsID") != null) {
+			  bbsID = Integer.parseInt(request.getParameter("bbsID"));
+			}
+			if (bbsID == 0) {
+			  PrintWriter script = response.getWriter();
+			  script.println("<script>");
+			  script.println("alert('유효하지 않은 글입니다.');");
+			  script.println("location.href = 'bbs.jsp");
+			  script.println("</script>");
+			}
+			BbsDTO bbs = new BbsDAO().getBbs(bbsID);
 	%>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,7 +54,7 @@
         </ul>
         <%
         if (id == null) {
-        %>
+          %>
           <ul class="navbar-nav form-inline my-2 my-lg-0">
           <li class="nav-item dropdown "><a
             class="nav-link dropdown-toggle" href="#"
@@ -58,7 +66,7 @@
             </ul></li>
         </ul>
           <%
-          } else {
+        } else {
           %>
           <ul class="navbar-nav form-inline my-2 my-lg-0">
           <li class="nav-item dropdown "><a
@@ -70,61 +78,55 @@
             </ul></li>
         </ul>
           <%
-          }
+        }
           %>
       </div>
     </nav>
     <!-- //navbar -->
-    <div class="row" style="width:800px; margin:0 auto; padding:50px 0;">
-      <table class="table table-bordered" style="text-align:center; border:1px solid #ddd;">
-        <thead>
-          <tr>
-           <th style="background:#eee; text-align:center; height:20px;">번호</th>
-           <th style="background:#eee; text-align:center; height:20px;">제목</th>
-           <th style="background:#eee; text-align:center; height:20px;">작성자</th>
-           <th style="background:#eee; text-align:center; height:20px;">작성일</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%
-          BbsDAO bbsDAO = new BbsDAO();
-          	          ArrayList<BbsDTO> list = bbsDAO.getList(pageNumber);
-          	          for (int i = 0; i < list.size(); i++) {
-          %>
-	          <tr>
-	            <td><%= list.get(i).getBbsID() %></td>
-	            <td><a href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%= list.get(i).getTitle().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&lt;").replaceAll("\n", "<br>")%></a></td>
-	            <td><%= list.get(i).getId() %></td>
-	            <td><%= list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시"
-	                + list.get(i).getBbsDate().substring(14, 16) + "분" %></td>
-	          </tr>
-          <%
-	          }
-          %>
-        </tbody>
-      </table>
-      <div class="my-2 my-lg-0">
-        <a href="write.jsp" class="btn btn-primary" role="button" >글쓰기</a>
-      </div>
-      <div class="col-12 my-3">
-        <ul class="pagination justify-content-center">
-	        <%
-	        if (pageNumber != 1) {
-		      %>
-          <li class="page-item">
-            <a class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber - 1%>" aria-disabled="true">이전</a>
-          </li>
-          <%
-          } if (bbsDAO.nextPage(pageNumber + 1)) {
-		      %>
-          <li class="page-item">
-            <a class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" aria-disabled="true">다음</a>
-          </li>
-          <%
-		        }
-		      %>
-        </ul>
-      </div>
+    
+    <div style="width:800px; margin:0 auto; padding:50px 0;">
+      <h6 style=" padding-bottom:5px; font-weight:bold;">글보기</h6>
+	      <table class="table" style="text-align:center; border:1px solid #dee2e6;">
+	        <caption>게시판 글보기</caption>
+	        <colgroup>
+	         <col width="15%">
+	         <col width="*">
+	        </colgroup>
+	        <tbody>
+            <tr>
+              <th style="width:20%;">글 번호</th>
+              <td style="text-align:left;"><%= bbs.getBbsID() %></td>
+            </tr>
+            <tr>
+              <th style="width:20%;">제목</th>
+	            <td style="text-align:left;"><%= bbs.getTitle().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&lt;").replaceAll("\n", "<br>") %></td>
+            </tr>
+            <tr>
+              <th style="width:20%;">작성자</th>
+              <td style="text-align:left;"><%= bbs.getId() %></td>
+            </tr>
+            <tr>
+              <th style="width:20%;">작성일</th>
+              <td style="text-align:left;">
+                <%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시"
+                  + bbs.getBbsDate().substring(14, 16) + "분" %>
+              </td>
+            </tr>
+            <tr style="; border-bottom: 1px solid #dee2e6;">
+              <th style="width:20%; height:250px">내용</th>
+              <td style="height:250px; text-align:left;"><%= bbs.getContent().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&lt;").replaceAll("\n", "<br>") %></td>
+            </tr>
+	        </tbody>
+	      </table>
+		    <a href="bbs.jsp" class="btn btn-primary">목록</a>
+		    <%
+		    if (id != null && id.equals(bbs.getId())) {
+		    %>
+		      <a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
+		      <a href="deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-primary" onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
+		    <%
+		      }
+		    %>
     </div>
   </div>
   <!-- //container -->

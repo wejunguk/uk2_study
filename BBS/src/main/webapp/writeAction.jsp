@@ -5,7 +5,7 @@
 %>
   <%@ page import="bbs.BbsDAO" %>
   <%@ page import="java.io.PrintWriter" %>
-  <jsp:useBean id="bbs" class="bbs.Bbs" scope="page" />
+  <jsp:useBean id="bbs" class="bbs.BbsDTO" scope="page" />
   <jsp:setProperty name="bbs" property="title" />
   <jsp:setProperty name="bbs" property="content" />
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
       } else {
         BbsDAO bbsDAO = new BbsDAO(); //인스턴스생성
 
-        int result = bbsDAO.write(bbs.getTitle(), id, bbs.getContent());        
+        int result = bbsDAO.write(id, bbs.getTitle(), bbs.getContent());        
         
         if (result == -1){ // 아이디가 기본키기. 중복되면 오류.
           PrintWriter script = response.getWriter();

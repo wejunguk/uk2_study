@@ -43,7 +43,7 @@ public class UserDAO {
     return -2; // DB오류
   }
 
-  public int join(User user) {
+  public int join(UserDTO user) {
 
     String SQL = "INSERT INTO USER VALUES (?,?,?,?,?)";
 

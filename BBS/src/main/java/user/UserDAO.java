@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import util.DatabaseUtil;
 
 public class UserDAO {
 
@@ -48,7 +49,8 @@ public class UserDAO {
     String SQL = "INSERT INTO USER VALUES (?,?,?,?,?)";
 
     try {
-      pstmt = conn.prepareStatement(SQL);
+      Connection conn = DatabaseUtil.getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(SQL);
 
       pstmt.setString(1, user.getId());
       pstmt.setString(2, user.getPassword());

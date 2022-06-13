@@ -52,9 +52,8 @@ public class AuthController {
       mv.setViewName("redirect:../member/list");
 
     } else {
-      mv.addObject("refresh", "2;url=loginForm");
-      mv.addObject("pageTitle", "로그인오류!");
-      mv.addObject("contentUrl", "auth/LoginFail.jsp");
+      mv.addObject("pageTitle", "로그인 오류");
+      mv.addObject("contentUrl", "auth/LoginForm.jsp");
       mv.setViewName("template1");
     }
     return mv;

@@ -16,17 +16,23 @@
   <script src="${contextPath}/node_modules/popperjs/dist/umd/popper.js"></script>
   <script src="${contextPath}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="${contextPath}/node_modules/sweetalert2/dist/sweetalert2.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <div>
 
 <jsp:include page="header.jsp"/>
-<jsp:include page="sidebar.jsp"/>
+<%--<jsp:include page="sidebar.jsp"/>--%>
  
 <div id="content">
-<jsp:include page="${contentUrl}"/>
+	<div class="container">
+	 <div class="pt-7 px-5 py-5">
+	   <jsp:include page="${contentUrl}"/>
+	 </div>
+	</div>
 </div>
-<!-- #content --> 
+<!-- //content --> 
 
 <jsp:include page="footer.jsp"/>
 

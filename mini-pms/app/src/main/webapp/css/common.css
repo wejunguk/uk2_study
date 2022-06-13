@@ -25,7 +25,7 @@ header {
 }
 
 footer {
-	border: 1px solid blue;
+	x-border: 1px solid blue;
 	clear: left;
 }
 
@@ -37,7 +37,19 @@ aside {
 }
 
 #content {
-	border: 1px dashed yellow;
-	margin-left: 130px; 
+	/*border: 1px dashed yellow;
+	margin-left: 130px; */
+}
+
+.copyright {
+	float:right;
+  margin:15px 0;
+font-size:.75rem;
+}
+
+.copyright a {
+	text-decoration:none;
+	color: var(--bs-body-color);
+
 }
 

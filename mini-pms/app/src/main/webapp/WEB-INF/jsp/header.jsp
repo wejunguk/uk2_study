@@ -29,23 +29,23 @@
         <input class="form-control me-2" type="search" placeholder="검색어" aria-label="Search">
         <button class="btn btn-outline-secondary btn-sm" type="submit">Search</button>
       </form>--%>
-				<ul class="nav navbar-nav navbar-right" style="margin-left: 20rem;">
+				<ul class="nav navbar-nav navbar-right">
 					<c:if test="${empty sessionScope.loginUser}">
-						<li class="nav-item px-2"><a
+						<li class="nav-item px-2" style="margin-left: 23rem;"><a
 							href="${contextPath}/app/auth/loginForm"
 							class="btn btn-outline-secondary nav-link btn-sm">로그인</a></li>
 					</c:if>
 					
 					<c:if test="${not empty sessionScope.loginUser}">
 				    <c:if test="${empty sessionScope.loginUser.photo }">
-				      <li class="nav-item px-2">
+				      <li class="nav-item px-2" style="margin-left: 23rem;">
                 <div class="avatar avatar-xl">
                   <img src="${contextPath}/images/no_profile.png" alt="프로필사진" class="rounded-circle">
                 </div>
               </li>
 				    </c:if>
 				    <c:if test="${not empty sessionScope.loginUser.photo}">
-				      <li class="nav-item px-2">
+				      <li class="nav-item px-2" style="margin-left: 23rem;">
                 <div class="avatar avatar-xl">
                   <img src="${contextPath}/upload/member/${sessionScope.loginUser.photo}_100x100.jpg"
                     class="rounded-circle" alt="프로필사진">

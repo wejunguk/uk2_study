@@ -18,18 +18,19 @@
   <script src="${contextPath}/node_modules/sweetalert2/dist/sweetalert2.js"></script>
 </head>
 <body>
-<div class="container">
+<div>
 
 <jsp:include page="header.jsp"/>
 <jsp:include page="sidebar.jsp"/>
  
 <div id="content">
 <jsp:include page="${contentUrl}"/>
-</div><!-- #content --> 
+</div>
+<!-- #content --> 
 
 <jsp:include page="footer.jsp"/>
 
-</div><!-- .container -->
+</div>
 
 </body>
 </html>

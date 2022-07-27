@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
-<h1>새회원</h1>
+<h1 class="pb-3">새회원</h1>
 <form action='add' method='post' enctype="multipart/form-data">
 <div class="mb-3 row">
   <label for='f-name' class="col-sm-2 col-form-label">*이름</label>

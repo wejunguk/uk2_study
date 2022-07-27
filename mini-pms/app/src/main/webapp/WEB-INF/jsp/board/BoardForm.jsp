@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     trimDirectiveWhitespaces="true" %>
-<h1>새 글</h1>
+<h1 class="pb-3">새 글</h1>
 <form action='add' method='post'>
 <div class="mb-3 row">
   <label for='f-title' class="col-sm-2 col-form-label">제목</label>

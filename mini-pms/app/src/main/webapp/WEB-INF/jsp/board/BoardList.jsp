@@ -15,8 +15,11 @@ tr:hover {
 }
 </style>
 
-<h1>게시글 목록</h1>
-<a href='form' class="btn btn-outline-primary btn-sm">새 글</a><br>
+<h1 class="pb-3">게시글 목록</h1>
+<c:if test="${sessionScope.loginUser.no != null}">
+<a href='form' class="btn btn-outline-primary btn mb-2">글쓰기</a><br>
+</c:if>
+
 <table class="table table-hover">
 <thead>
   <tr>

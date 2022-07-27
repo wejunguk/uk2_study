@@ -12,7 +12,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="nav navbar-nav me-auto mb-lg-0 px-5">
 					<li class="nav-item px-3">
-				    <a class="nav-link active" aria-current="page" href="${contextPath}/app/board/list">게시글</a>
+				    <a class="nav-link" aria-current="page" href="${contextPath}/app/board/list">게시글</a>
 				  </li>
 					<li class="nav-item px-3">
 				    <a class="nav-link" href="${contextPath}/app/member/list">회원</a>

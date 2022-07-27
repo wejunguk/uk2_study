@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     trimDirectiveWhitespaces="true" %>
-<h1>게시글</h1>
+<h1 class="pb-3">게시글</h1>
 <form id="member-form" action='update' method='post'>
 <div class="mb-3 row">
   <label for='f-no' class="col-sm-2 col-form-label">번호</label>
@@ -45,8 +45,10 @@
     <input id='f-like' type="text" readonly class="form-control-plaintext" value="${board.like}">
   </div>
 </div>
+<c:if test>
 <button class="btn btn-primary">변경</button>
 <a href='delete?no=${board.no}' class="btn btn-primary">삭제</a> 
+</c:if>
 <a href='list' class="btn btn-primary">목록</a><br>
 </form>
 

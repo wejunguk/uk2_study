@@ -12,6 +12,7 @@
 # 단축키
 - ! + tab : html 기본코드 자동생성
 - Ctrl + \ : 패널 토글
+- 같은 텍스트 선택 : ctrl + d
 
 # Reactivity 구현 (vue-way.html)
 - reactivity: 루트 컴포넌트의 변경된 값을 화면에 바로 보여주는 것
@@ -62,3 +63,12 @@
 # 뷰 인스턴스에서의 this
 - https://www.w3schools.com/js/js_this.asp
 - https://betterprogramming.pub/understanding-the-this-keyword-in-javascript-cb76d4c7c5e8
+
+# 같은 컴포넌트 레벨간의 통신 방법
+1) 상위 컴포넌트로 이벤트올린다.
+2) 상위 컴포넌트에서 프롭스를 통해 하위 컴포넌트로 데이터를 보낸다.
+
+# 뷰 라우터
+ - 뷰 라이브러리를 이용하여 싱글 페이지 애플리케이션을 구현, 페이지간의 이동 기능 구현할 때 사용하는 라이브러리
+ - 라우터 CDN 설치 가이드 문서 
+    - https://joshua1988.github.io/vue-camp/vue/router.html

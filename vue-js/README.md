@@ -72,3 +72,5 @@
  - 뷰 라이브러리를 이용하여 싱글 페이지 애플리케이션을 구현, 페이지간의 이동 기능 구현할 때 사용하는 라이브러리
  - 라우터 CDN 설치 가이드 문서 
     - https://joshua1988.github.io/vue-camp/vue/router.html
+    - Root에 $route가 안잡히는 이유?
+        - 라이브러리 CD주소와 라이브러리 버전 확인하기

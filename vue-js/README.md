@@ -7,7 +7,7 @@
 - Prettier
 - Auto Close Tag
 - Atom Keymap
-
+- auto rename tag : 태그 시작태그,끝태그를 자동으로 바꿔줌
 
 # 단축키
 - ! + tab : html 기본코드 자동생성
@@ -69,8 +69,14 @@
 2) 상위 컴포넌트에서 프롭스를 통해 하위 컴포넌트로 데이터를 보낸다.
 
 # 뷰 라우터
- - 뷰 라이브러리를 이용하여 싱글 페이지 애플리케이션을 구현, 페이지간의 이동 기능 구현할 때 사용하는 라이브러리
+ - 뷰 라이브러리를 이용하여 싱글 페이지 애플리케이션을 구현, 페이지 이동 기능 구현할 때 사용하는 뷰 라이브러리
  - 라우터 CDN 설치 가이드 문서 
     - https://joshua1988.github.io/vue-camp/vue/router.html
     - Root에 $route가 안잡히는 이유?
         - 라이브러리 CD주소와 라이브러리 버전 확인하기
+- routes 속성 : 페이지의 라우팅 정보 들어감
+    - 라우팅 정보 : 어떤 url로 들어갔을 때 어떤 페이지를 띄울지
+
+# 라우터 네비게이션 가드
+- https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards
+- 

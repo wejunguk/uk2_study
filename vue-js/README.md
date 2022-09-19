@@ -11,8 +11,14 @@
 
 # 단축키
 - ! + tab : html 기본코드 자동생성
-- Ctrl + \ : 패널 토글
+- Ctrl + \ : 편집기 분할
 - 같은 텍스트 선택 : ctrl + d
+- Ctrl + b : 사이드바 오픈&아웃
+- Ctrl + P : 파일 검색
+- Ctrl + f / Ctrl + h : 바꾸기
+- Alt + 화살표 위&아래 : 줄 이동
+- Alt + Shift + 화살표 아래 : 아래로 줄 복사
+- Shift + Tab : 내어쓰기
 
 # Reactivity 구현 (vue-way.html)
 - reactivity: 루트 컴포넌트의 변경된 값을 화면에 바로 보여주는 것
@@ -27,7 +33,7 @@
 # Instance
 - 인스턴스 생성 : new Vue();
 - 인스턴스의 속성과 API
-    - el: 인스턴스가 그려지는 화면의 시작점 (특정 HTML태그)
+  - el: 인스턴스가 그려지는 화면의 시작점 (특정 HTML태그)
     - tamplate: 화면에 표시할 요소 (HTML, CSS 등)
     - data: 뷰의 반응성이 반영된 데이터 속성
     - methods: 화면의 동작과 이벤트 로직을 제어하는 메서드

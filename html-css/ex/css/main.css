@@ -1,0 +1,41 @@
+div {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition:
+  width .5s,
+  background-color 4s;
+}
+div:active {
+  width:300px;
+  background-color: royalblue;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition: 1s;
+}
+.box::before {
+  content: "";
+  /* display: inline-block; */
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
+}
+.box:focus {
+  width: 300px;
+}
+input:focus {
+  background-color: orange;
+}
+.a {
+  width: 300px;
+  height: 200px;
+  background-color: blue;
+}
+.b {
+  width: 200px;
+  height: 100px;
+  background-color: orange;
+}

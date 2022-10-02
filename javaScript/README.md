@@ -18,3 +18,7 @@
 - split : 문자를 인수 기준으로 쪼개서 배열로 변환
 - reverse : 배열을 뒤집기
 - join : 배열을 인수 기준으로 문자로 병합해 반환
+
+# parcel-bundler
+- 로컬환경에서 개발서버 오픈할때 : scripts dev에 작성 npm run dev
+- 사용자들이 보는 용도로 서버 오픈 : scripts build에 작성 npm run build

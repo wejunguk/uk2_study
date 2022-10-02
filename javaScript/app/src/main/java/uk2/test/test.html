@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script defer src="./main.js"></script> -->
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <script>
+    //<div class="box">Box</div>의 요소내용 출력
+    const boxEl = document.querySelector('box');
+
+    console.log(boxEl.textContent);
+  </script>
+  <!-- <script>
+    // const box = document.querySelector('.box');
+    // box 요소에 click 이벤트를 추가해 클릭시 hello 콘솔 출력
+    const box = document.querySelector('.box');
+
+    box.addEventListener('click', function() {
+      console.loc('hello');
+    })
+  </script>
+  <script>
+    // <div>1</div>, <div>2</div> 위 div 요소에
+    // js로 class="hello" 추가하시오
+    const divEls = document.querySelectorAll('div');
+
+    divEls.forEach(function(divEl) {
+      divEl.classList.add('hello');
+    })
+  </script> -->
+  <!-- <script>
+    // const boxEl = document.querySelector('.box');
+    // boxEl요소에 'active'가 포함되어 있으면 포함됨! 출력
+
+    const boxEl = document.querySelector('.box');
+
+    if (boxEl.classList.contains('active')) {
+      console.log('포함됨!!!!');;
+    }
+    
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM API</title>
+  <script defer src="./main.js"></script>
+</head>
+<body>
+ <script>
+    //* html 요소 1개 검색/찾기
+    const boxEl = document.querySelector('.box');
+    
+    // html 요소에 적용할 수 있는 메소드 
+    boxEl.addEventListener();
+    
+    // 인수를 추가 가능
+    boxEl.addEventListener(1, 2);
+
+    // 1 - 이벤트(Event, 상황)
+    boxEl.addEventListener('click', 2);
+
+    // 2 - 핸들러(Handler, 실행할 함수)
+    boxEl.addEventListener('click', function() {
+      console.log('Click');
+    })
+
+    //* 클래스 정보 객체 활용
+    const boxEl2 = document.querySelector('.box');
+
+    boxEl2.classList.add('active');
+    let isContains = boxEl2.classList.isContains('active');
+    console.log(isContains); // true
+
+    boxEl2.classList.remove('active');
+    isContains = boxEl2.classList.contains('active');
+    console.log(isContains); // false
+
+
+    //* html 요소 모두 검색/찾기
+    const boxEls = document.querySelectorAll('.box');
+    console.log(boxEls);
+
+    // 찾은 요소들 반복해서 함수 실행, 익명함수를 인수로 추가
+    boxEls.forEach(function() {});
+
+    // 첫 번째 매개변수(boxEl) : 반복 중인 요소,
+    // 두 번째 매개면수(index) : 반복 중인 번호,
+    boxels.forEach(function(boxEl, index) {});
+
+    // 출력
+    boxels.forEach(function(boxEl, index) {
+      boxEl.classList.add(`order-${index + 1}`);
+      console.log(index, boxEl);
+    })
+
+
+    //* Getter,Setter
+    const boxEl3 = document.querySelector('.box');
+
+    // Getter, 값을 얻는 용도
+    console.log(boxEl3.textContent); // Box
+
+    // Setter, 값을 지정하는 용도
+    boxEl3.textContent = 'Hi';
+    console.log(boxEl3.textContent); //Hi
+
+ </script>
+</body>
+</html>

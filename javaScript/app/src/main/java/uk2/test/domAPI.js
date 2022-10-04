@@ -14,14 +14,14 @@
 // console.log(user.name);
 // console.log(user.age);
 // console.log(user.isValid);
-
+// --------------------------------------
 // 배열 데이터
 // let fruits = ['apple', 'banana', 'cherry'];
 
 // console.log(fruits[0]);
 // console.log(fruits[1]);
 // console.log(fruits[2]);
-
+// --------------------------------------
 // DOM API - querySelector
 // let boxEl = document.querySelector('.box');
 
@@ -38,7 +38,7 @@
 //     boxEl.classList.contains('active')
 //   );
 // });
-
+// --------------------------------------
 // DOM API - querySelectorAll
 // const boxEls = document.querySelectorAll('.box');
 
@@ -47,9 +47,9 @@
 //   console.log(index, boxEl);
 // });
 
-const boxEl = document.querySelector('.box');
+// const boxEl = document.querySelector('.box');
 
-console.log(boxEl.textContent);
+// console.log(boxEl.textContent);
 
-boxEl.textContent = 'Hi';
-console.log(boxEl.textContent);
+// boxEl.textContent = 'Hi';
+// console.log(boxEl.textContent);

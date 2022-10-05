@@ -25,10 +25,8 @@ const user = {
 // localStorage.removeItem('user')
 
 // 데이터 수정하기
-// const str = localStorage.getItem('user') 
-// const obj = JSON.parse(str)
-// obj.age = 22
-// console.log(obj)
-// localStorage.setItem('user', JSON.stringify(obj))
-
-// localStorage.removeItem('user')
+const str = localStorage.getItem('user') 
+const obj = JSON.parse(str)
+obj.age = 22
+console.log(obj)
+localStorage.setItem('user', JSON.stringify(obj))

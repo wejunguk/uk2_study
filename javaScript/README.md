@@ -42,3 +42,6 @@
   - 메소드 이름 필수
   - 사용할 때 {} 묶어서 이름을 적어야 한다.
   - 이름만 지정한다면 여러 데이터 내보내기 가능
+
+  # lodash
+  - lowdb : https://github.com/typicode/lowdb

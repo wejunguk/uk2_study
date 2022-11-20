@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>틱택토</title>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+   <!-- <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table> -->
+  <script>
+    const data = [];
+    for (let i = 0; i <3; i++) {
+      data.push([]); // 배열안에 빈배열 생성
+    }
+    const $table = document.createElement('table');
+    for (let i = 0; i < 3; i++) {
+      const $tr = document.createElement('tr')
+      for (let i = 0; i < 3; i++) {
+        const $td = document.createElement('td')
+        $tr.append($td);
+      }
+      $table.append($tr);
+    }
+    document.body.append($table);
+  </script>
+</body>
+</html>

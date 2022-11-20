@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+</head>
+<body>
+  <script>
+    // 매개변수
+    const f = (x, y, x) => {
+      return x * y* z;
+    }
+    // =
+    // const f = (x, y, x) => (x * y* z);   x y z를 받아서 함수를 실행 후 리턴하는구나
+
+    const obj = {
+      bc: 'hello',
+      '2ca': 'hello2',
+      'c a': 'hello3',
+      'c-a': 'hello4',
+    };
+
+    // obj.bc; // hello
+    // obj.[bc] // error
+    // obj['bc']; // hello
+    // obj.2ca; // error
+    // obj['2ca'] // hello2
+
+    // 객체들은 변수 안에 생성되는데,
+    // ** 객체가 아닌 값은!!!
+    // 별도의 공간에 값이 생성된다
+    //
+    // const a = {name: 'z'}
+    // const b = a;
+    // a.name = h;
+    // console.log(b.name); // h
+
+    // let a = 'z';
+    // let b = a;
+    // a = 'h';
+    // console.log(b); //z
+  </script>
+</body>
+</html>

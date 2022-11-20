@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arr</title>
+</head>
+<body>
+  <script>
+    const t = ['가','나','다','라', '바'];
+
+    // while
+    let i = 0;
+    while (i < t.length) {
+      console.log(target[i]);
+      i++
+    }
+    // for
+    for (let i = 0; i < t.length; i++) {
+      console.log(t[i]);
+    }
+
+    //------------------------------------------
+    const t2 = ['가', '라', '다', '라', '마', '라'];
+
+    // 라 모두 제거
+    while (t2.indexOf('라') != -1) {
+      t2.splice(t2.indexOf('라'), 1);
+    }
+    t2;
+
+    let index = t2.indexOf('라');
+    while (index != -1) {
+      t2.splice(index, 1);
+      index = t2.indexOf('라');
+    }
+
+    
+
+  </script>
+</body>
+</html>

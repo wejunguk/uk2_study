@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <div id="root"></div>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    
+    // const App = () => {
+      // const handleSubmit = (event) => {
+      //   event.preventDefault();
+      //   const phoneNumber = event.target.elements.phone.value;
+        
+      //   // 번호 입력후 submit을 누르면 그때, 앞 글자 0을 비교해서 알람창 띄우기
+      //   if(phoneNumber.startsWith(0)) {
+      //     alert('Good');
+      //   } else {
+      //     alert('bad');
+      //   }
+      // }
+      // return (
+      //   <form onSubmit={handleSubmit}>
+      //     <label htmlFor="phone">Phone Number: </label>
+      //     <br />
+      //     <input id="phone" name="phone" />
+      //     <br /><br />
+      //     <button type="submit">Submit</button>
+      //   </form>
+      // )};
+
+
+      // ---------------- 입력칸에 글자 넣자마자 알림창 띄우기
+
+    const App = () => {
+      const [message, setMessage] = React.useState("");
+      const [phoneNumber, setPhoneNumber] = React.useState("");
+      
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(phoneNumber);
+      };
+
+      const handleChange = (event) => {
+        if(event.target.value.startsWith(0)) {
+          setMessage("가능한 번호입니다.");
+          setPhoneNumber(event.target.value);
+        } else if (event.target.value.length === 0) {
+          setPhoneNumber("");
+          setMessage("");
+        } else {
+          setMessage("불가능한 번호입니다.");
+        }
+      };
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="phone">Phone Number: </label>
+          <br />
+          <input id="phone" name="phone" onChange={handleChange} value={phoneNumber} />
+          <p>{message}</p>
+          <br /><br />
+          <button type="submit"
+            disabled={
+              phoneNumber.length === 0 || message !== "가능한 번호입니다."
+            }
+          >Submit</button>
+        </form>
+    )};
+
+    ReactDOM.render(<App />, rootElement);
+  </script>
+</body>
+</html>

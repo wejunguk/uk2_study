@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <div id="root"></div>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    
+    const App = () => {
+      const handleSumbit = (event) => {
+        event.preventDefault();
+        console.dir(event.target);
+        alert(
+          // `fristName: ${event.target[0].value}, LastName: ${evnet.target[1].value}`
+          // id 값으로 가지고 오기
+          `fristName: ${event.target.elements.fname.value}, LastName: ${evnet.target.elements.lname.value}`
+        );
+      };
+      return (
+        <form onSubmit={handleSumbit}>
+          <label htmlFor="fname">First name:</label><br />
+          <input type="text" id="fname" name="fname" defaultValue="John" /><br />
+          <label htmlFor="lname">Last name:</label><br />
+          <input type="text" id="lname" name="lname" defaultValue="Doe" /><br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+    )};
+
+    ReactDOM.render(<App />, rootElement);
+  </script>
+</body>
+</html>

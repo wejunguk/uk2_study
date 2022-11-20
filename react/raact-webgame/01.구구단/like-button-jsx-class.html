@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 게임jsx-class component</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!--<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>-->
+  <!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>-->
+  <script type="text/babel">
+    'use strict';
+
+    class LikeButton extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {liked: false};
+      }
+
+      render() {
+        if (this.state.liked) {
+          return 'You liked this.';
+        }
+        // ex
+        // const array = []; // 배열도 객체
+        // array.b = 'c';
+        // function a() {}
+        // a.d = 'e';
+
+        return (
+          <button onClick={() => {
+            // this.state.liked = true; (x) -> 객체 그대로 사용 안함
+            this.setState({liked: true})
+          }}>
+            Like
+          </button>
+        );
+      }
+    }
+  </script>
+  <script type="text/babel">
+    // ReactDOM.render(<LikeButton/>, document.querySelector('#root')); // React 17버전
+    ReactDOM.createRoot(document.querySelector('#root')).render(<LikeButton />); // React 18버전
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 다음 리스너를 romoveEventListener메서드로 제거해 보세요
+  const fun = (값) => () => {
+    console.log('고차함수입니다.', 값);
+  }
+  // 태그.addEventListener('click', fun(1));
+  // 태그.removeEventListener('click', fun(1));
+  // 제거가 되지 않는다. why?
+  // fun(1) === fun(1) // false
+  // {} === {} // false
+  // [] === [] // false
+  // 변수는 객체 안에 넣어서 비교를 해야 한다.
+  // const a = {}; 
+  // const b = a;
+  // a === b; // true 
+  const fun1 = fun(1);
+  fun1 === fun1; // true
+  태그.addEventListener('click', fun1);
+  태그.removeEventListener('click', fun1);
+  // fun(1)을 fun1변수에 저장해서 같은 함수라는 것을 보장해야 한다.
+  </script>
+</body>
+</html>

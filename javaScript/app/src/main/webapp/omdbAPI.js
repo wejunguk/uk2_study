@@ -23,5 +23,3 @@ function fetchMovies() {
       imgEl.src = res.data.Search[0].Poster
     })
 }
-
-fetchMovies()

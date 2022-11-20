@@ -8,9 +8,10 @@
 // Array: []
 // Object: {}
 // --------------------------------------
-// String.prototype.indexOf() : 주어진 값과 일치하는 첫 번째 인덱스를 반환
-// const result = 'Hello world!'.indexOf('world')
-// console.log(result) // 6
+// indexOf() : 주어진 값과 일치하는 첫 번째 인덱스를 반환 
+String.prototype.indexOf() 
+const result = 'Hello world!'.indexOf('world')
+console.log(result) // 6
 
 // length : 글자길이 
 // const str = '0123'

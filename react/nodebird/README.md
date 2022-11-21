@@ -11,7 +11,7 @@
 - npm i eslint-plugin-react-hooks -D
 - npm i antd@4.3.1 styled-components @ant-design/icons
 
-Next.js
+# Next.js
 
 - 리액트의 SSR(서버사이드렌더링) 지원 프레임워크
   첫 방문때만 브라우저-프론트-백엔드 다 합쳐서 화면에 보여지고
@@ -19,10 +19,8 @@ Next.js
 - 서버 로딩을 없앨 수 있음
 - import Head from "next/head"; : 헤드 컴포넌트 지원
 - import Link from "next/link";
-
 - 동적 라우팅 기능
   [name].js
-
 - 자체적인 라우터 기능 가능 (설치안해두 됨)
 - 리액트 핫 로더 기능 가능 :
 
@@ -36,7 +34,62 @@ Next.js
 - antd 사용해 개발하기
   - xs: 모바일, sm: 태블릿, md: 작은 데스크탑
   - gutter: 그리드 간격
+  - card
 
-#
+# useCallBack
 
 - 컴포넌트에 프롭스로 넘겨주는 함수는 useCallback으로 사용해야지 최적화 됨
+- id와 password를 입력할 때마다 state가 바뀌는데 useCallback에서 바뀌는 state를 인지하려면 [] 배열에 넣어주어야 합니다.
+- const EX = useCallback((e) => {
+  console.log(id, password);
+  }, [id, password]);
+- useCallback : 함수 캐싱
+- useMemo : 값을 캐싱
+
+# 커스텀 컴포넌트 스타일링
+
+- 인라인 스타일링을 하면 리렌더링이 최적화가 되지 않기 때문에 사용한다.
+- 1. 스타일드 컴포넌트 사용
+  - styled.div
+  - styled(Input.Serch): (컴포넌트) 사용
+- 2. useMemo 사용
+
+  - const style = useMemo(() => ({ maringTop: 10 }, []));
+  - 사용부분 컴포넌트에 style={style} 선언
+
+  # 리렌더링
+
+  - 함수형 컴포넌트에서 리렌더링되면 return에서 바뀌는 부분만 다시 시작된다.
+  - Hooks부분은 같은부분으로 쳐서 바뀐게 없다로 인식
+
+  # onFinish
+
+  - submit 되면 Form에서 호출됨
+  - 이미 preventDefault() 되어있음
+
+  # a 링크 새창으로, 안전하게 열리게 하기
+
+  - target="\_blank" rel="noreferrer noopener"
+
+  -a = () => {} 이런 경우 함수의 몸통이고 () => ({}) 이런 경우 {} 객체를 return
+
+# 중앙데이터저장소
+
+- Redux, 컨텍스트 API, 아폴로 등..
+- 여러 컴포넌트에서 사용되는 공통 데이터를 중앙데이터저장소역활을 하는 Redux에서 관리를 해서
+  각 컴포넌트에 필요 데이터(비동기요청)를 보내준다. 부모컴포넌트를 만들어 자식컴포넌트로 보내지 않아도 됨
+- 컨텍스트 API : 데이터 요청,성공,실패 했을 경우를 다 정의해야 함
+
+# Redux
+
+- (버전 확인 필수)npm i next-redux-wrapper@6.0.2
+- npm i redux@4.0.5
+- npm i react-redux@7.2.1 : 리액트와 리덕스를 연결해줌
+- 액션에 바꾸는 데이터를 선언해주고 reducer가 직접 dispatch 해줘야 함
+- 데이터의 히스토리를 관리 할 수있다.
+- state, reducer, action
+- state + reducer : store
+- 액션 크리에이터 생성
+- 비동기 액션 크리에이터
+- 액션을 기록하고 싶으면 : 미들웨어를 붙여야한다.
+- npm i redux-devtools-extension@2.13.8 : 브라우저 개발자 도구랑 연동됨

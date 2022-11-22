@@ -82,7 +82,7 @@
 
 # Redux
 
-- (버전 확인 필수)npm i next-redux-wrapper@6.0.2
+- npm i next-redux-wrapper@6.0.2 (버전 확인 필수)
 - npm i redux@4.0.5
 - npm i react-redux@7.2.1 : 리액트와 리덕스를 연결해줌
 - 액션에 바꾸는 데이터를 선언해주고 reducer가 직접 dispatch 해줘야 함
@@ -91,5 +91,17 @@
 - state + reducer : store
 - 액션 크리에이터 생성
 - 비동기 액션 크리에이터
-- 액션을 기록하고 싶으면 : 미들웨어를 붙여야한다.
+- 액션을 기록하고 싶으면: 미들웨어를 붙여야한다.
+  - 미들웨어: 액션이 리듀서로 전달되기 전후로 추가 작업을 실행해주는 함수
 - npm i redux-devtools-extension@2.13.8 : 브라우저 개발자 도구랑 연동됨
+
+# useRef
+
+- ref: 실제 DOM에 접근하기 위해 사용
+
+#
+
+- 배열안에 jsx를 넣을땐 꼭 key 값을 넣어야 한다.
+- 그래서 map 사용시 key 넣음
+- 옵셔널 체이닝 연산자: me && me.id = me?.id
+- ture-> false/ false-> ture 만드는 코드는 (prev) => !prev로

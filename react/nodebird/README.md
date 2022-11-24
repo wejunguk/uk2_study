@@ -85,6 +85,7 @@
 - npm i next-redux-wrapper@6.0.2 (버전 확인 필수)
 - npm i redux@4.0.5
 - npm i react-redux@7.2.1 : 리액트와 리덕스를 연결해줌
+- npm i react-slick@0.27.11
 - 액션에 바꾸는 데이터를 선언해주고 reducer가 직접 dispatch 해줘야 함
 - 데이터의 히스토리를 관리 할 수있다.
 - state, reducer, action
@@ -94,6 +95,26 @@
 - 액션을 기록하고 싶으면: 미들웨어를 붙여야한다.
   - 미들웨어: 액션이 리듀서로 전달되기 전후로 추가 작업을 실행해주는 함수
 - npm i redux-devtools-extension@2.13.8 : 브라우저 개발자 도구랑 연동됨
+
+# Redux-thunk
+
+- 리덕스 미들웨어, 리덕스의 없던 기능을 추가해줌
+- 리덕스가 비동기액션을 dispatch할 수 있도록 도와줌
+- 비동기액션 하나의 여러개의 동기액션을 사용 할 수 있음
+- npm i redux-thunk@2.3.0
+
+# Redux-saga
+
+- npm i redux-saga
+- npm i axios
+- generator
+  - 함수 실행하다 yield만나면 멈춤 => 중간점이 있는 함수
+  - generator 호출하고 그 값을 next()로 done이 true 될때까지 호출
+  - 무한의 이벤트 리스너로 활용 가능
+  - rootsaga를 만들고 그안에 호출
+  - fork or call: 함수 호출
+    - fork: 비동기 함수 호출
+    - call: 동기 함수 호출
 
 # useRef
 
@@ -105,3 +126,12 @@
 - 그래서 map 사용시 key 넣음
 - 옵셔널 체이닝 연산자: me && me.id = me?.id
 - ture-> false/ false-> ture 만드는 코드는 (prev) => !prev로
+
+# transform 안에 postion:fixed;를 넣는 경우?
+
+- fixed를 잡지 못하는 버그 발생
+- 해결? transform 해제하기 : transform: none !important;
+
+# saga-effect
+
+- all, fork, call, put

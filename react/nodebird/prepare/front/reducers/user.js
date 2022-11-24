@@ -15,16 +15,16 @@ export const initialState = {
 //   type: LOG_OUT,
 // };
 
-export const loginAction = (data) => {
+export const loginRequestAction = (data) => {
   return {
-    type: "LOG_IN",
+    type: "LOG_IN_REQUEST",
     data,
   };
 };
 
-export const logoutAction = () => {
+export const logoutRequestAction = () => {
   return {
-    type: "LOG_OUT",
+    type: "LOG_OUT_REQUEST",
   };
 };
 

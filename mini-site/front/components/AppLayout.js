@@ -1,57 +1,61 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import Link from "next/link";
-import { Menu, Input, Row, Col } from "antd";
-import UserProfile from "../components/UserProfile";
-import LoginForm from "../components/LoginForm";
+import { Menu, Input } from "antd";
+import styled from "styled-components";
+import ContentLayout from "./ContentLayout";
 
-const AppLayout = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const AppLayout = () => {
+  const SearchInput = styled(Input.Search)`
+    vertical-align: middle;
+  `;
+
+  const Inner = styled.div`
+    width: 1100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+  `;
+
   return (
-    <div>
-      <Menu mode="horizontal">
-        <Menu.Item key="/">
-          <Link href="/">
-            <a>메인</a>
+    <>
+      <Inner>
+        <Menu mode="horizontal">
+          <Menu.Item key="main">
+            <Link href="/">
+              <a style={{ fontWeight: 700, fontUnderline: 0, fontSize: 17 }}>
+                뮤지컬커뮤니티[뮤.커]
+              </a>
+            </Link>
+          </Menu.Item>
+          <Menu.SubMenu key="SubMenu" title="나의 정보">
+            <Menu.Item key="main">
+              <Link href="/about/profile">
+                <a>회원정보 수정</a>
+              </Link>
+            </Menu.Item>
+          </Menu.SubMenu>
+          {/* <Menu.Item key="login">
+          <Link href="/login">
+            <a>로그인</a>
           </Link>
-        </Menu.Item>
-        <Menu.Item key="/about/profile">
-          <Link href="/about/profile">
-            <a>프로필</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="/signup">
-          <Input.Search enterButton style={{ verticalAlign: "middle" }} />
-        </Menu.Item>
-        <Menu.Item key="/signup">
-          <Link href="/signup">
-            <a>회원가입</a>
-          </Link>
-        </Menu.Item>
-      </Menu>
-      <Row gutter={8}>
-        <Col xs={24} md={6}>
-          {isLoggedIn ? <UserProfile /> : <LoginForm />}
-        </Col>
-        <Col xs={24} md={12}>
-          {children}
-        </Col>
-        <Col xs={24} md={6}>
-          <a
-            href="https://github.com/wejunguk"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            githun by jugnukwe
-          </a>
-        </Col>
-      </Row>
-    </div>
+        </Menu.Item> */}
+          <Menu.Item key="signup">
+            <Link href="/signup">
+              <a>회원가입</a>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="/search">
+            <SearchInput enterButton />
+          </Menu.Item>
+        </Menu>
+      </Inner>
+      <ContentLayout />
+    </>
   );
 };
 
-AppLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+// AppLayout.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
 
 export default AppLayout;

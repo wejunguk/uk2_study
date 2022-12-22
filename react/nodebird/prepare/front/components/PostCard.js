@@ -24,8 +24,8 @@ const PostCard = ({ post }) => {
   }, []);
 
   const id = useSelector((state) => state.user.me?.id);
-  // const me = useSelector((state) => state.user.me);
-  // const id = me && me.id;
+  // = const { me } = useSelector((state) => state.user);
+  //   const id = me && me.id; (me && me.id)
   return (
     <div style={{ marginBottom: 20 }}>
       <Card

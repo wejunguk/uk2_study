@@ -1,10 +1,10 @@
-import React from 'react';
-import AppLayout from '../components/AppLayout';
+import React from "react";
+import AppLayout from "../components/AppLayout";
 
 const Home = () => {
   return (
     <AppLayout>
-      <div>Hello.Next!</div>
+      <div>Hello, My Project!</div>
     </AppLayout>
   );
 };

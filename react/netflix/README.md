@@ -1,12 +1,12 @@
-## Netfilx
+# Netfilx
 
-# Create-react-App으로 리액트 설치
+## Create-react-App으로 리액트 설치
 
 - npx create-react-app <폴더이름>
   - npx create-react-app ./ (현재 디렉토리에 설치)
     -> Babel이나 Webpack설정이 이미 다 되어 있음
 
-# Axios
+## Axios
 
 - 브라우저, node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리
 - 백엔드와 프론트가 통신을 쉽게하기 위해 사용
@@ -16,11 +16,11 @@
     1. 인스턴스 생성할 폴더 파일 생성
     2.
 
-#
+##
 
 - 윈도우 리로드: window.location.reload()
 
-# useEffect
+## useEffect
 
 useEffect(() => {
 // 효과 선언
@@ -32,20 +32,20 @@ return () => {
 - 먼저 렌더링이 한번 된 이후에 호출이 되게 됩니다.
 - 종속성 배열에 state나 props를 넣어주면 그 state나 props가 변할 때마다 다시 호출이 되게 됩니다.
 
-# styled Component
+## styled Component
 
 - javaSciript안에서 CSS 처리 할 수 있게 해주는 라이브러리
   npm install --save styled-components
 
-# Iframe
+## Iframe
 
 - HTML Inline Frame
 - 다른 HTML페이즈를 현재 페이지에 포함시키는 중첩된 브라우저
 - frame요소를 이용하면 해당 웹 페이지안에 어떠한 제한 없이 다른 페이지 불러와서 삽입 가능
 
-# scrollLeft
+## scrollLeft
 
-# React Router Dom
+## React Router Dom
 
 - npm install react-router-dom --save
 - 웹 앱에서 동적 라우팅을 구현 할 수 있음
@@ -58,7 +58,7 @@ return () => {
   ex) localhost:3000/home에 <Home /> 컴포넌트를 보여주고 싶을때, 동기화된 상태로 유지함
 - 경로 이동: App.js에 Routes, Route로 정의 / <Link /> 태그 이용
 
-# React Router Dom APIs
+## React Router Dom APIs
 
 - 중첩라우팅, Outlet, useNavigate, useParams, useLocation, useRoutes
   - 중첩라우팅: ReactRouter의 가장 강력한 기능 중 하나, 복잡한 레이아웃 코드를 어지
@@ -74,12 +74,12 @@ return () => {
     JavaScript 객체를 사용하여 경로를 정의. 이러한 객체는 일반 <Route> 요소와
     동일한 속성을 갖지만 JSX가 필요하지 않음
 
-# Debounce()
+## Debounce()
 
 - 사용자가 미리 결정된 시간 동안 타이핑을 멈출 때까지 keyup 이벤트의 처리를 지연
 - UI 코드가 모든 이벤트를 처리할 필요가 없고, 서버로 전송되는 API 호출 수도 크게 줄어듬
 
-# useRef()
+## useRef()
 
 - 특정 DOM을 선택할 때 사용
 - DOM을 직접 선택해야 하는 경우
@@ -87,8 +87,16 @@ return () => {
   2. 스크롤바 위치를 가져와야 할 때
   3. 엘리먼트에 포커스를 설정해줘야 할 때
 
-# swiper
+## swiper
 
 - npm i swiper --save
 
-# API_KEY 환경변수로 숨기기
+## 배포하기
+
+## API_KEY 환경변수로 숨기기
+
+- .env파일에 key 값 저장 후 axios에 연결
+
+## gh-pages 모듈
+
+- npm i gh-pages --save-dev

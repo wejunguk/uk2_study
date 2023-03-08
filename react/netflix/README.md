@@ -99,4 +99,4 @@ return () => {
 
 ## gh-pages 모듈
 
-- npm i gh-pages --save-dev
+- npm i gh-pages

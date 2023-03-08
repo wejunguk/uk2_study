@@ -43,6 +43,8 @@ return () => {
 - 다른 HTML페이즈를 현재 페이지에 포함시키는 중첩된 브라우저
 - frame요소를 이용하면 해당 웹 페이지안에 어떠한 제한 없이 다른 페이지 불러와서 삽입 가능
 
+# scrollLeft
+
 # React Router Dom
 
 - npm install react-router-dom --save
@@ -54,7 +56,39 @@ return () => {
 - 앱 어디서나 Router 사용할 수 있게 하기: react-router-dom에서 BrowerRouter 루트 구성
 - BrowserRouter - HTML5 History API(pushState, replactState, propstate) 사용하여 UI를 URL과 동기화된 상태로 유지
   ex) localhost:3000/home에 <Home /> 컴포넌트를 보여주고 싶을때, 동기화된 상태로 유지함
+- 경로 이동: App.js에 Routes, Route로 정의 / <Link /> 태그 이용
 
 # React Router Dom APIs
 
 - 중첩라우팅, Outlet, useNavigate, useParams, useLocation, useRoutes
+  - 중첩라우팅: ReactRouter의 가장 강력한 기능 중 하나, 복잡한 레이아웃 코드를 어지
+    럽힐 필요가 없습니다. 대부분의 레이아웃은 URL의 세그먼트에 연결되며 React
+    Router는 이를 완전히 수용
+  - Outlet: 자식 경로 요소를 렌더링하려면 부모 경로 요소에서 <Outlet>을 사용해야 합니다. 이렇
+    게 하면 하위 경로가 렌더링될 때 중첩된 UI가 표시됨
+  - useNavigate: 경로를 바꿔줌 navigate('/home') ===> localhost:3000/home 으로 감
+  - useParams: :style 문법을 path 경로에 사용하였다면 useParams()로 읽을 수 있음
+  - useLocation: 이 Hooks 는 현재 위치 객체를 반환. 현재 위치가 변경될 때마다 일부
+    side effect를 수행하려는 경우에 유용
+  - useRoutes: useRoutes Hooks는 와 <Routes>와 기능적으로 동일하지만 <Route> 요소 대신
+    JavaScript 객체를 사용하여 경로를 정의. 이러한 객체는 일반 <Route> 요소와
+    동일한 속성을 갖지만 JSX가 필요하지 않음
+
+# Debounce()
+
+- 사용자가 미리 결정된 시간 동안 타이핑을 멈출 때까지 keyup 이벤트의 처리를 지연
+- UI 코드가 모든 이벤트를 처리할 필요가 없고, 서버로 전송되는 API 호출 수도 크게 줄어듬
+
+# useRef()
+
+- 특정 DOM을 선택할 때 사용
+- DOM을 직접 선택해야 하는 경우
+  1. 엘리먼트 크기를 가져와야 할 때
+  2. 스크롤바 위치를 가져와야 할 때
+  3. 엘리먼트에 포커스를 설정해줘야 할 때
+
+# swiper
+
+- npm i swiper --save
+
+# API_KEY 환경변수로 숨기기

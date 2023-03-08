@@ -22,7 +22,7 @@ const Footer = () => {
             </FooterLink>
           </FooterLinkContent>
           <FooterDescContainer>
-            <FooterDescRights>JungukWe Rights Reserved.</FooterDescRights>
+            <FooterDescRights>JungukWe Rights Reserved</FooterDescRights>
           </FooterDescContainer>
         </FooterLinkContainer>
       </FooterContent>

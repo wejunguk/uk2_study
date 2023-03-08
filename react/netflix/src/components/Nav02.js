@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
-import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [show, setShow] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -15,16 +12,10 @@ const Nav = () => {
         setShow(false);
       }
     });
-
     return () => {
       window.removeEventListener("scroll", () => {});
     };
   }, []);
-
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-    navigate(`/search?q=${e.target.value}`);
-  };
 
   return (
     <nav className={`nav ${show && "nav__black"}`}>
@@ -33,13 +24,6 @@ const Nav = () => {
         className="nav__logo"
         alt="Netflix logo"
         onClick={() => window.location.reload()}
-      />
-      <input
-        value={searchValue}
-        onChange={handleChange}
-        className="nav__input"
-        type="type"
-        placeholder="영화 검색"
       />
       <img
         alt="User logged"
